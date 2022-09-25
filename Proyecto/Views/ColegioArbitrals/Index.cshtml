@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Proyecto.Models.ColegioArbitral>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>COLEGIOS ARBITRALES</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create", new { }, new { @class = "btn btn-info" })
+</p>
+
+@if (TempData["AlertMessage"] != null)
+{
+    <div class="alert alert-success">
+        <strong></strong>@TempData["AlertMessage"]
+    </div>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NIT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Resolucion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Correo)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NIT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Resolucion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Direccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Correo)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.ColegioArbitralId }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Detalles", "Details", new { id = item.ColegioArbitralId }, new { @class = "btn btn-success" })
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.ColegioArbitralId }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>
