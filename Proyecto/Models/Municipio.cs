@@ -12,7 +12,7 @@ namespace Proyecto.Models
         [Key]
         public int MunicipioId { get; set; } //llave primaria autoincrementable (identity)
 
-        [Display(Name = "Nombre Municipio")]
+        [Display(Name = "Nombre Prueba")]
         [Required(ErrorMessage = "El campo {0} es obligatorio")]
         [StringLength(30, MinimumLength =4, ErrorMessage =" El campo {0} debe tener entre {2} y {1} caracteres")]
         [Index("IndexNombre", IsUnique=true )]
